@@ -1,0 +1,18 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+API Test Suite1,,,2019-03-12 15:21:53,2019-03-12 15:22:06,13.713s,FAILED
+,,,,,,
+Test Cases/VerifyContent,,,2019-03-12 15:21:53,2019-03-12 15:22:03,9.353s,PASSED
+"var2 = sendRequest(findTestObject(""VerifyComment""))",,,2019-03-12 15:21:54,2019-03-12 15:22:02,8.351s,PASSED
+"verifyElementPropertyValue(var2, ""[4].name"", ""vero eaque aliquid doloribus et culpa"")",,,2019-03-12 15:22:02,2019-03-12 15:22:03,0.174s,PASSED
+,,,,,,
+Test Cases/VerifyRequestCode,,,2019-03-12 15:22:03,2019-03-12 15:22:03,0.672s,PASSED
+"var = sendRequest(findTestObject(""VerifyComment""))",,,2019-03-12 15:22:03,2019-03-12 15:22:03,0.245s,PASSED
+"verifyResponseStatusCode(var, 200)",,,2019-03-12 15:22:03,2019-03-12 15:22:03,0.017s,PASSED
+,,,,,,
+Test Cases/VerifyPostRequest,,,2019-03-12 15:22:03,2019-03-12 15:22:05,1.509s,FAILED
+"var3 = sendRequest(findTestObject(""PostCommand""))",,,2019-03-12 15:22:04,2019-03-12 15:22:05,1.120s,PASSED
+"verifyResponseStatusCode(var3, 201)",,,2019-03-12 15:22:05,2019-03-12 15:22:05,0.024s,FAILED
+,,,,,,
+Test Cases/DeletePost,,,2019-03-12 15:22:05,2019-03-12 15:22:06,1.525s,FAILED
+"var4 = sendRequest(findTestObject(""DeleteCommands""))",,,2019-03-12 15:22:05,2019-03-12 15:22:06,1.088s,PASSED
+"verifyResponseStatusCode(var4, 200)",,,2019-03-12 15:22:06,2019-03-12 15:22:06,0.015s,FAILED

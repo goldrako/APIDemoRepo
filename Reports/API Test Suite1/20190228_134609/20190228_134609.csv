@@ -1,0 +1,10 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+API Test Suite1,,,2019-02-28 13:46:12,2019-02-28 13:46:21,8.101s,PASSED
+,,,,,,
+Test Cases/VerifyContent,,,2019-02-28 13:46:13,2019-02-28 13:46:20,6.791s,PASSED
+"var2 = sendRequest(findTestObject(""VerifyComment""))",,,2019-02-28 13:46:14,2019-02-28 13:46:20,5.973s,PASSED
+"verifyElementPropertyValue(var2, ""[4].name"", ""vero eaque aliquid doloribus et culpa"")",,,2019-02-28 13:46:20,2019-02-28 13:46:20,0.148s,PASSED
+,,,,,,
+Test Cases/VerifyRequestCode,,,2019-02-28 13:46:20,2019-02-28 13:46:20,0.742s,PASSED
+"var = sendRequest(findTestObject(""VerifyComment""))",,,2019-02-28 13:46:20,2019-02-28 13:46:20,0.288s,PASSED
+"verifyResponseStatusCode(var, 200)",,,2019-02-28 13:46:20,2019-02-28 13:46:20,0.021s,PASSED
