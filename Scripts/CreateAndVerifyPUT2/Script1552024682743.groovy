@@ -11,48 +11,57 @@ import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testcase.TestCaseFactory as TestCaseFactory
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testdata.TestDataFactory as TestDataFactory
-import com.kms.katalon.core.testobject.ConditionType
-import com.kms.katalon.core.testobject.HttpBodyContent
+import com.kms.katalon.core.testobject.ConditionType as ConditionType
+import com.kms.katalon.core.testobject.HttpBodyContent as HttpBodyContent
 import com.kms.katalon.core.testobject.ObjectRepository as ObjectRepository
 import com.kms.katalon.core.testobject.TestObject as TestObject
-import com.kms.katalon.core.testobject.TestObjectProperty
+import com.kms.katalon.core.testobject.TestObjectProperty as TestObjectProperty
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKeywords
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import com.kms.katalon.core.testobject.ResponseObject
-import com.kms.katalon.core.testobject.RequestObject
-import com.kms.katalon.core.testobject.impl.HttpTextBodyContent
-import java.util.List
-import java.util.concurrent.locks.Condition
-import java.util.ArrayList
+import com.kms.katalon.core.testobject.ResponseObject as ResponseObject
+import com.kms.katalon.core.testobject.RequestObject as RequestObject
+import com.kms.katalon.core.testobject.impl.HttpTextBodyContent as HttpTextBodyContent
+import java.util.List as List
+import java.util.concurrent.locks.Condition as Condition
+import java.util.ArrayList as ArrayList
 
 //PUT object
-def request = (RequestObject)findTestObject('PUT_Exam2')
+def request = ((findTestObject('PUT_Exam2')) as RequestObject)
+
 String body = '{ "id": 1, "title": "TCOE TEST2", "author": "TCOE1"}'
 
-try{
-	request.setBodyContent(new HttpTextBodyContent(body,"UTF-8", "application/json"))
-	//request.setRestUrl("http://localhost:3000/posts/1")
-	def url = request.getRestUrl()
-	url = url.replace('{postid}','1')
-	request.setRestUrl(url)
+try {
+    request.setBodyContent(new HttpTextBodyContent(body, 'UTF-8', 'application/json'))
+
+    //request.setRestUrl("http://localhost:3000/posts/1")
+    def url = request.getRestUrl()
+
+    url = url.replace('{postid}', '1')
+
+    request.setRestUrl(url)
 }
-catch(Exception ex){
-	println (ex.detailMessage)
-}
+catch (Exception ex) {
+    println(ex.detailMessage)
+} 
+
 //Make POST request
 WS.sendRequest(request)
 
 //Verify response with GET
-def response = (RequestObject)findTestObject('GET_Exam1')
-List<TestObjectProperty> params = new ArrayList();
-params.add(new TestObjectProperty("id", ConditionType.EQUALS, "1"))
+def response = ((findTestObject('GET_Exam1')) as RequestObject)
+
+List<TestObjectProperty> params = new ArrayList()
+
+params.add(new TestObjectProperty('id', ConditionType.EQUALS, '1'))
+
 response.setRestParameters(params)
 
 //Make GET Request
-def result = WS.sendRequest(response)
+def result = WS.sendRequest(response, FailureHandling.CONTINUE_ON_FAILURE)
+
 //Verify title from response
-WS.verifyElementPropertyValue(result, "title", "TCOE TEST2", FailureHandling.STOP_ON_FAILURE)
+WS.verifyElementPropertyValue(result, 'title', 'TCOE TEST2', FailureHandling.STOP_ON_FAILURE)
 

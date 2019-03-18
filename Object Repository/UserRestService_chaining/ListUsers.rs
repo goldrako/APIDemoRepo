@@ -3,7 +3,7 @@
    <description></description>
    <name>ListUsers</name>
    <tag></tag>
-   <elementGuidId>dd9642f7-91bc-40bd-b339-c15ad0d9c3a4</elementGuidId>
+   <elementGuidId>f22bbc14-3837-4312-8812-05a01989161b</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <httpBody></httpBody>

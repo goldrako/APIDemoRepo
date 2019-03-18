@@ -1,22 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>ListUsers</name>
+   <name>UpdateUser</name>
    <tag></tag>
-   <elementGuidId>dd9642f7-91bc-40bd-b339-c15ad0d9c3a4</elementGuidId>
+   <elementGuidId>c9362ae6-2377-42b7-9eb2-13454b5819c7</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <httpBody></httpBody>
-   <httpBodyContent></httpBodyContent>
-   <httpBodyType></httpBodyType>
+   <httpBodyContent>{
+  &quot;text&quot;: &quot;{\n    \&quot;name\&quot;: \&quot;${userName}\&quot;,\n    \&quot;job\&quot;: \&quot;zion resident\&quot;\n}&quot;,
+  &quot;contentType&quot;: &quot;application/json&quot;,
+  &quot;charset&quot;: &quot;UTF-8&quot;
+}</httpBodyContent>
+   <httpBodyType>text</httpBodyType>
+   <httpHeaderProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Content-Type</name>
+      <type>Main</type>
+      <value>application/json</value>
+   </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
-   <restRequestMethod>GET</restRequestMethod>
-   <restUrl>https://reqres.in/api/users?page=2</restUrl>
+   <restRequestMethod>PUT</restRequestMethod>
+   <restUrl>https://reqres.in/api/users/2?</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
+   <variables>
+      <defaultValue>GlobalVariable.userName</defaultValue>
+      <description></description>
+      <id>20df0325-f4d6-43a1-aab5-42b8eff0b24c</id>
+      <masked>false</masked>
+      <name>userName</name>
+   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject
@@ -33,11 +51,13 @@ ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
 
 
+
+
 WS.verifyResponseStatusCode(response, 200)
 
 assertThat(response.getStatusCode()).isEqualTo(200)
 
-//WS.verifyElementPropertyValue(response, 'data[1].first_name', 'Charles')
-WS.verifyElementPropertyValue(response, 'data[1].first_name', 'Tom')</verificationScript>
+WS.verifyElementPropertyValue(response, 'name', 'Charles')
+</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>
