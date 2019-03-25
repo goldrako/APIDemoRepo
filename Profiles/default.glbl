@@ -14,4 +14,9 @@
       <initValue>'Alex'</initValue>
       <name>userName</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'KR'</initValue>
+      <name>CountryCode</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

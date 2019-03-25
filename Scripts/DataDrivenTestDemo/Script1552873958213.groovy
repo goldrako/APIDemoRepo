@@ -13,7 +13,14 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WS.sendRequest(findTestObject('CountryInfoService/GetCapital', [('countryISOCode') : GlobalVariable.countryISOCode]))
+//println("... value of country code is : " + CountryCode)
+//println("... value of capital is : " + Capital)
+//println("... value of currenc is : " + vCurrency)
+response1 = WS.sendRequest(findTestObject('CountryInfoService/GetCapital2', [('CountryCode') : CountryCode]))
 
-WS.sendRequest(findTestObject('CountryInfoService/GetCurrency', [('CountryCode') : GlobalVariable.countryISOCode]))
+WS.verifyElementText(response1, 'CapitalCityResponse.CapitalCityResult', Capital)
+
+response2 = WS.sendRequest(findTestObject('CountryInfoService/GetCurrency2', [('CountryCode') : CountryCode]))
+
+WS.verifyElementText(response2, 'CountryCurrencyResponse.CountryCurrencyResult.sName', vCurrency)
 

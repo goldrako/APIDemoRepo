@@ -6,10 +6,24 @@
    <comment></comment>
    <testCaseGuid>cccb1f20-b892-4268-b6eb-857b94a8af34</testCaseGuid>
    <variable>
-      <defaultValue>''</defaultValue>
+      <defaultValue>'KR'</defaultValue>
       <description></description>
       <id>bb3a54c1-26e6-43df-92f3-eacfbef107b3</id>
       <masked>false</masked>
       <name>CountryCode</name>
+   </variable>
+   <variable>
+      <defaultValue>'Seoul'</defaultValue>
+      <description></description>
+      <id>75ee1986-5f9d-49ba-9fec-98052b50d605</id>
+      <masked>false</masked>
+      <name>Capital</name>
+   </variable>
+   <variable>
+      <defaultValue>'Won'</defaultValue>
+      <description></description>
+      <id>8c28d347-8984-49f8-be11-bcfa311595d5</id>
+      <masked>false</masked>
+      <name>vCurrency</name>
    </variable>
 </TestCaseEntity>
