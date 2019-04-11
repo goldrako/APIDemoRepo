@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>ListUsers</name>
+   <name>CoverageTest</name>
    <tag></tag>
-   <elementGuidId>dd9642f7-91bc-40bd-b339-c15ad0d9c3a4</elementGuidId>
+   <elementGuidId>9819b867-511c-4d49-bcdd-be7310e11eb5</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <httpBody></httpBody>
@@ -11,7 +11,7 @@
    <httpBodyType></httpBodyType>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>https://reqres.in/api/users?page=2</restUrl>
+   <restUrl>http://localhost:8080/CoverageTest/CalcServlet02?num1=1&amp;num2=2&amp;operator=plus</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -31,13 +31,6 @@ RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
-
-
-WS.verifyResponseStatusCode(response, 200)
-
-assertThat(response.getStatusCode()).isEqualTo(200)
-
-WS.verifyElementPropertyValue(response, 'data[1].first_name', 'Charles')
-//WS.verifyElementPropertyValue(response, 'data[1].first_name', 'Tom')</verificationScript>
+//assertThat(response.getResponseText()).isEqualTo(&quot;Katalon Test Project&quot;)</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>
