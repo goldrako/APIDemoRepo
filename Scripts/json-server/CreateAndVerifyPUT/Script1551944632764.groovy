@@ -29,7 +29,7 @@ import java.util.concurrent.locks.Condition
 import java.util.ArrayList
 
 //PUT object
-def request = (RequestObject)findTestObject('PUT_Exam1')
+def request = (RequestObject)findTestObject('json-server/PUT_Exam1')
 String body = '{ "id": 1, "title": "TCOE TEST", "author": "TCOE"}'
 
 try{
@@ -44,7 +44,7 @@ catch(Exception ex){
 WS.sendRequest(request)
 
 //Verify response with GET
-def response = (RequestObject)findTestObject('GET_Exam1')
+def response = (RequestObject)findTestObject('json-server/GET_Exam1')
 List<TestObjectProperty> params = new ArrayList();
 params.add(new TestObjectProperty("id", ConditionType.EQUALS, "1"))
 response.setRestParameters(params)

@@ -26,7 +26,7 @@
       <guid>f21ccd96-af63-41c5-8ecc-1e09f4156c5d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/VerifyPostRequest</testCaseId>
+      <testCaseId>Test Cases/json-server/VerifyPostRequest</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>1dc08c90-ac9a-42fe-a975-ac58bdeefb51</guid>

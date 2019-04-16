@@ -13,6 +13,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+
 WS.sendRequest(findTestObject('UserRestService/ListUsers'))
 
 def response = WS.sendRequestAndVerify(findTestObject('UserRestService/ListUsers'))
@@ -21,7 +22,9 @@ WS.verifyElementPropertyValue(response, 'data[2].first_name', 'Tracey')
 
 WS.verifyElementPropertyValue(response, 'data[2].id', '6')
 
-WS.verifyElementsCount(response, 'data', 2, FailureHandling.CONTINUE_ON_FAILURE)
+WS.verifyElementsCount(response, 'data', 3, FailureHandling.CONTINUE_ON_FAILURE)
 
 WS.verifyResponseStatusCodeInRange(response, 100, 200)
 
+//chekcpoint 작동 확인용 코드
+//WS.verifyCheckpoint(findCheckpoint('Checkpoints/CheckPoint1/Checkpoint'), false)

@@ -17,3 +17,6 @@ var2 = WS.sendRequest(findTestObject('VerifyComment'))
 
 WS.verifyElementPropertyValue(var2, '[4].name', 'vero eaque aliquid doloribus et culpa')
 
+WS.verifyCheckpoint(findCheckpoint(Checkpoints/Checkpoint1/Checkpoint), false)
+
+

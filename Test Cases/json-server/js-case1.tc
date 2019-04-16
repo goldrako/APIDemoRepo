@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>json-server CRUD</description>
+   <name>js-case1</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>bdec3df2-b3d2-4cef-b5dd-f61f86d452d3</testCaseGuid>
+</TestCaseEntity>

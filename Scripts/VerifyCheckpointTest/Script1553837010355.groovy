@@ -1,4 +1,3 @@
- //package testPackage
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
@@ -14,22 +13,5 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//import extractSessionId
-response2 = WS.sendRequest(findTestObject('UserRestService_chaining/ListUsers'))
-
-def slurper = new groovy.json.JsonSlurper()
-
-def result = slurper.parseText(response2.getResponseBodyContent())
-
-def value = result.data[1].first_name
-
-println('... Value extracted is : ' + value)
-
-GlobalVariable.userName = value
-
-println('... Globale Variable is : ' + GlobalVariable.userName)
-
-WS.sendRequestAndVerify(findTestObject('UserRestService_chaining/UpdateUser', [('userName') : GlobalVariable.userName]))
-
-WS.sendRequest(findTestObject(null))
+WS.verifyCheckpoint(findCheckpoint('Checkpoints/CheckPoint1/Checkpoint'), false)
 

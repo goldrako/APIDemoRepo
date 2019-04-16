@@ -29,9 +29,9 @@ import java.util.concurrent.locks.Condition as Condition
 import java.util.ArrayList as ArrayList
 
 //PUT object
-def request = ((findTestObject('PUT_Exam2')) as RequestObject)
+def request = ((findTestObject('json-server/PUT_Exam2')) as RequestObject)
 
-String body = '{ "id": 1, "title": "TCOE TEST2", "author": "TCOE1"}'
+String body = '{ "id": 1, "title": "TCOE TEST1", "author": "TCOE1"}'
 
 try {
     request.setBodyContent(new HttpTextBodyContent(body, 'UTF-8', 'application/json'))
@@ -51,7 +51,7 @@ catch (Exception ex) {
 WS.sendRequest(request)
 
 //Verify response with GET
-def response = ((findTestObject('GET_Exam1')) as RequestObject)
+def response = ((findTestObject('json-server/GET_Exam1')) as RequestObject)
 
 List<TestObjectProperty> params = new ArrayList()
 
@@ -63,5 +63,5 @@ response.setRestParameters(params)
 def result = WS.sendRequest(response, FailureHandling.CONTINUE_ON_FAILURE)
 
 //Verify title from response
-WS.verifyElementPropertyValue(result, 'title', 'TCOE TEST2', FailureHandling.STOP_ON_FAILURE)
+WS.verifyElementPropertyValue(result, 'title', '[TCOE TEST1]', FailureHandling.STOP_ON_FAILURE)
 

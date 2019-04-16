@@ -8,8 +8,8 @@
    <useRalativeImagePath>false</useRalativeImagePath>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;  {\n    \&quot;id\&quot;: 11,\n    \&quot;title\&quot;: \&quot;TCOE Exam9\&quot;,\n    \&quot;author\&quot;: \&quot;TCOE4\&quot;\n  }&quot;,
-  &quot;contentType&quot;: &quot;text/plain&quot;,
+  &quot;text&quot;: &quot;  {\n    \&quot;id\&quot;:12,\n    \&quot;title\&quot;: \&quot;TCOE Exam12\&quot;,\n    \&quot;author\&quot;: \&quot;TCOE12\&quot;\n  }&quot;,
+  &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
    <httpBodyType>text</httpBodyType>
@@ -22,7 +22,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>http://localhost:3000/posts?</restUrl>
+   <restUrl>http://localhost:3000/posts</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -44,8 +44,8 @@ ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
 
 
-WS.verifyResponseStatusCode(response, 200)
+WS.verifyResponseStatusCode(response, 201)
 
-assertThat(response.getStatusCode()).isEqualTo(200)</verificationScript>
+assertThat(response.getStatusCode()).isEqualTo(201)</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>
