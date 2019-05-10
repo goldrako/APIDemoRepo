@@ -1,7 +1,3 @@
-import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
-import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -12,30 +8,20 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
-import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
-import com.kms.katalon.core.model.FailureHandling as FailureHandling
-import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testcase.TestCaseFactory as TestCaseFactory
-import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testdata.TestDataFactory as TestDataFactory
 import com.kms.katalon.core.testobject.ConditionType as ConditionType
 import com.kms.katalon.core.testobject.HttpBodyContent as HttpBodyContent
 import com.kms.katalon.core.testobject.ObjectRepository as ObjectRepository
-import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.testobject.TestObjectProperty as TestObjectProperty
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKeywords
-import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.testobject.ResponseObject as ResponseObject
 import com.kms.katalon.core.testobject.RequestObject as RequestObject
 import com.kms.katalon.core.testobject.impl.HttpTextBodyContent as HttpTextBodyContent
@@ -49,18 +35,17 @@ def request = ((findTestObject('json-server/PostCommand')) as RequestObject)
 String body = '{ "id": 12, "title": "TCOE TEST12", "author": "TCOE12"}'
 
 try {
-	request.setBodyContent(new HttpTextBodyContent(body, 'UTF-8', 'application/json'))
+    request.setBodyContent(new HttpTextBodyContent(body, 'UTF-8', 'application/json'))
 
-	//request.setRestUrl("http://localhost:3000/posts/1")
-	def url = request.getRestUrl()
+    //request.setRestUrl("http://localhost:3000/posts/1")
+    def url = request.getRestUrl()
 
-	//url = url.replace('{postid}', '1')
-
-	request.setRestUrl(url)
+    //url = url.replace('{postid}', '1')
+    request.setRestUrl(url)
 }
 catch (Exception ex) {
-	println(ex.detailMessage)
-}
+    println(ex.detailMessage)
+} 
 
 //Make POST request 실행
 WS.sendRequest(request)
@@ -86,18 +71,18 @@ request = ((findTestObject('json-server/PUT_Exam2')) as RequestObject)
 body = '{ "id": 12, "title": "TCOE TEST21", "author": "TCOE21"}'
 
 try {
-	request.setBodyContent(new HttpTextBodyContent(body, 'UTF-8', 'application/json'))
+    request.setBodyContent(new HttpTextBodyContent(body, 'UTF-8', 'application/json'))
 
-	//request.setRestUrl("http://localhost:3000/posts/1")
-	url = request.getRestUrl()
+    //request.setRestUrl("http://localhost:3000/posts/1")
+    url = request.getRestUrl()
 
-	url = url.replace('{postid}', '12')
+    url = url.replace('{postid}', '12')
 
-	request.setRestUrl(url)
+    request.setRestUrl(url)
 }
 catch (Exception ex) {
-	println(ex.detailMessage)
-}
+    println(ex.detailMessage)
+} 
 
 //Make PUT request
 WS.sendRequest(request)
@@ -118,3 +103,7 @@ result = WS.sendRequest(response, FailureHandling.CONTINUE_ON_FAILURE)
 //Verify title from response
 WS.verifyElementPropertyValue(result, 'title', '[TCOE TEST21]', FailureHandling.STOP_ON_FAILURE)
 
+
+//(D)elete : 확인을 위해 실행하지 않음
+//WS.sendRequest(findTestObject('json-server/DeleteCommands'))
+//
